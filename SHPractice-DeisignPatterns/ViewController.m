@@ -17,6 +17,8 @@
 #import "ObjectB1.h"
 #import "ObjectB2.h"
 
+#import "TargetObject.h"
+
 @interface ViewController ()
 
 @end
@@ -28,7 +30,9 @@
     
 //    [self responderDemo];
     
-    [self bridgeDemo];
+//    [self bridgeDemo];
+    
+    [self adapterDemo];
 }
 
 //责任链模式
@@ -80,6 +84,11 @@
     BaseObjectB *objectB = [ObjectB2 new];
     objectA.objB = objectB;
     [objectA handle];
+}
+
+- (void)adapterDemo{
+    TargetObject *targetObject = [TargetObject new];
+    [targetObject request];
 }
 
 
